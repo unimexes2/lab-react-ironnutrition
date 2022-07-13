@@ -20,7 +20,9 @@ To take care of the food you eat, you decided to create a nutrition app that wil
 
   ```bash
   $ cd lab-react-ironnutrition
-  $ npm install
+  $ npm installls
+  cd
+  
   $ npm start
   ```
 
