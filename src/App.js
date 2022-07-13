@@ -3,7 +3,7 @@ import foods from './foods.json'
 import FoodCard from "./FoodCard";
 import { useState } from "react";
 import FoodBox from "./Foodbox";
-import AddFood from './AddFoodForm';
+import AddFood from './AddFoodForm.js';
 
 function App() {
   const [foodArr, setFoodArr] = useState(foods);

@@ -3,23 +3,26 @@ import { useState } from "react";
 function AddFood(props) {
   const [name, setName] = useState("");
   const [calories, setCalorie] = useState("");
-  const [image, setImage] = useState(5);
-  const [servings, setServings] = useState(true);
+  const [image, setImage] = useState("");
+  const [servings, setServings] = useState("");
 
   //FOCO: Funcion manejadora, cambia el state con el estado actual del input
 
   const setNameInput = (e) => {
-    setName(e.target.value);
+
+
+    setName(e);
   };
 
   const setCalorieInput = (e) => {
-    setCalorie(e.target.value);
+    setCalorie(e);
   };
   const setImageInput = (e) => {
-    setImage(e.target.value);
+    setImage(e);
   };
   const setServingsInput = (e) => {
-    setServings(e.target.value);
+    console.log(e)
+    setServings(e);
   };
 
   const handleSubmit = (e) => {
@@ -28,7 +31,7 @@ function AddFood(props) {
      name:name,
       calories: calories,
       image: image,
-      serving: serving
+      servings:servings
     };
 
     //console.log("Submitted", newFood);
@@ -39,12 +42,15 @@ function AddFood(props) {
     setCalorie("");
     setImage("");
     setServings("");
+
+
   };
 
   return (
     <div className="AddFood">
       <h4>Add a Movie</h4>
       <form onSubmit={handleSubmit}>
+       
         <label>Name:</label>
      
         <input
@@ -56,27 +62,29 @@ function AddFood(props) {
 
         <label>Calories:</label>
         <input
-          type="number"
+          type="text"
           name="calories"
           value={calories}
           onChange={(e) => setCalorieInput(e.target.value)}
         />
 
-        <label>Servings:</label>
+<label>Link image:</label>
         <input
-          type="number"
-          name="servings"
-          value={servings}
+          type="text"
+          name="image"
+          value={image}
           onChange={(e) => setImageInput(e.target.value)}
         />
 
-        <label>Image:</label>
+<label>Servings:</label>
         <input
-           type="text"
-          name="image"
-          value={image}
-          onChange={(e) => setServingsInput(e.target.checked)}
+          type="text"
+          name="servings"
+          value={servings}
+          onChange={(e) => setServingsInput(e.target.value)}
         />
+
+
         <button type="submit">Add a Food</button>
       </form>
     </div>
