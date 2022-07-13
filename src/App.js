@@ -4,20 +4,52 @@ import FoodCard from "./FoodCard";
 import { useState } from "react";
 import FoodBox from "./Foodbox";
 import AddFood from './AddFoodForm.js';
+import SearchFood from './Search';
+
+
 
 function App() {
-  const [foodArr, setFoodArr] = useState(foods);
-  
+ 
+ 
+  var [foodArr, setFoodArr] = useState(foods);
+ 
   const addNewFood = (newFood) => {
     const updateFoods = [...foodArr, newFood];
     setFoodArr(updateFoods);
   };
+  const deleteFood= (name) => {
+    const filteredFood = foodArr.filter((elem) => {
+      return elem.name !== name;
+    });
+    setFoodArr(filteredFood);
+  }
 
+
+
+  const searchFood=(nameFood)=>{
+    foodArr=[...foods]
+    console.log(nameFood,foods)
+    const filteredFood = foodArr.filter((elem) => {
+
+      
+      console.log(elem.name.includes(nameFood.nameFood))
+    
+      if( elem.name.includes(nameFood.nameFood)){return elem}
+      
+      
+    });
+    setFoodArr(filteredFood);
+    
+  }
+
+  
  
  
  
  return (
 <div>
+<SearchFood searchFood={searchFood} />
+
 <AddFood addFood={addNewFood} />
 
 
@@ -30,6 +62,7 @@ function App() {
        calories={food.calories}
       image={food.image}
       servings= {food.serving}
+      deleteFood={deleteFood}
     />)
 })
 }

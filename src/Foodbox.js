@@ -1,7 +1,7 @@
 import React from 'react'
 
 function FoodBox(props) {
- // const {food} = props;
+const {food,deleteFood} = props;
   
   return (
   
@@ -21,6 +21,9 @@ function FoodBox(props) {
     <div className="FoodCard">
        <h3>Servings{props.servings}</h3>
     </div>
+    <button onClick={() => deleteFood(props.name)} className="btn-new">
+      Delete
+    </button>
     
        </div> 
   )

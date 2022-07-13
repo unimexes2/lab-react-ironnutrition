@@ -48,7 +48,7 @@ function AddFood(props) {
 
   return (
     <div className="AddFood">
-      <h4>Add a Movie</h4>
+      <h4>Add a Food</h4>
       <form onSubmit={handleSubmit}>
        
         <label>Name:</label>

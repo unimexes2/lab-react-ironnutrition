@@ -197,7 +197,7 @@ The food should be added to the list when the user clicks submit.
 
 Create a `Search` component to search through and filter the list of food items displayed.
 
-![Example - Add food component](https://education-team-2020.s3.eu-west-1.amazonaws.com/web-dev/lab-react-ironnutrition-5.gif)
+![Example - Add food component](https://education-team-2020.s3.eu-west-1.amazonaws.com/web-devlab-react-ironnutrition-5.gif)
 
 <br>
 
